@@ -11,12 +11,21 @@ class QuartetoVingador
 end
 
 describe QuartetoVingador do 
+    
     it 'deve adicionar um vingador' do
         hq = QuartetoVingador.new
 
         hq.coloca('spiderman')
-        expect(hq.list).to eql ['spiderman']
-       
+        expect(hq.list).to eql ['spiderman'] 
     end
 
+    it 'deve adicionar uma lista de vingadores' do
+        hq = QuartetoVingador.new
+
+        hq.coloca('hulk')
+        hq.coloca('iroman')
+        expect(hq.list).to include 'iroman'
+    end
 end
+
+
