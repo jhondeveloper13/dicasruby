@@ -15,5 +15,31 @@ describe 'forms' do
 
     end
 
+    it 'senha incorreta' do
+
+        visit 'https://training-wheels-protocol.herokuapp.com/login'
+
+        fill_in 'username', with: 'stark'
+        fill_in 'password', with: 'jarvis'
+
+        click_button 'Login'
+        expect(find('#flash').text).to include 'Senha é invalida!'
+
+
+    end
+    
+    it 'usuário não cadastrado' do
+
+
+        visit 'https://training-wheels-protocol.herokuapp.com/login'
+
+        fill_in 'username', with: 'sta'
+        fill_in 'password', with: 'jarvis'
+
+        click_button 'Login'
+        expect(find('#flash').text).to include 'O usuário informado não está cadastrado'
+    
+    end
+
 
 end
