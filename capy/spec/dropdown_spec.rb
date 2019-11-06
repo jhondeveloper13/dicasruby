@@ -1,4 +1,4 @@
-describe 'caixa de selecao', :este do
+describe 'caixa de opções', :este do
     it 'item especifico simples' do
         visit 'https://training-wheels-protocol.herokuapp.com/dropdown'
         select('Loki', from:'dropdown') #só para quando possui ID
