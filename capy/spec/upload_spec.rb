@@ -6,14 +6,14 @@ before(:each) do
     @imagem = Dir.pwd + '/spec/src/jj.jpg'
 end
 
-#it 'uploado com arquivo texto' do 
- #attach_file('file-upload', @arquivo)
- #click_button 'Upload'
+it 'uploado com arquivo texto' do 
+ attach_file('file-upload', @arquivo)
+ click_button 'Upload'
 
- #div_arquivo = find('#uploaded-file')
- #expect(div_arquivo.text).to eql 'jhon.txt'
+ div_arquivo = find('#uploaded-file')
+ expect(div_arquivo.text).to eql 'jhon.txt'
 
-#end
+end
 
 it 'uploado com arquivo imagem' do 
     attach_file('file-upload', @imagem)
