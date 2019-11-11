@@ -15,20 +15,22 @@ it 'uploado com arquivo texto' do
 
 end
 
-it 'uploado com arquivo imagem' do 
+it 'upload de imagem' do 
     attach_file('file-upload', @imagem)
     click_button 'Upload'
    
     div_arquivo = find('#uploaded-file')
     expect(div_arquivo.text).to eql 'jj.jpg'
 
-    img - finf('#new-image')
-    expect(img[:src]).to eql 'jj.jpg'
+    img = find('#new-image')
+    expect(img[:src]).to include 'jj.jpg'
    
    end
 
 after(:each) do
     sleep 3
 end
+
+#page.has_field? 'id', disable: true verifica se o camp esta habilitado
 
 end
