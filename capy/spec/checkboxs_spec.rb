@@ -16,12 +16,6 @@ describe 'caixas de selecção', :checkbox do
         find('input[value=cap]').set(true)#usando seletor css
     end
 
-    it 'escolhendo um radiobutton' do 
-        visit 'https://training-wheels-protocol.herokuapp.com/radios' #radios button
-        choose('cap')
-        # find('input[value=cap]').click se for com elemento css
-    end
-
     after(:each) do
     sleep 3
     end

@@ -1,7 +1,11 @@
-describe 'forms' do 
+describe 'forms', :login do 
+
+    before(:each) do 
+        visit 'https://training-wheels-protocol.herokuapp.com/login'
+    end 
     
     it 'login com sucesso' do
-        visit 'https://training-wheels-protocol.herokuapp.com/login'
+       
 
         fill_in 'username', with: 'stark'
         fill_in 'password', with: 'jarvis!'
@@ -9,29 +13,24 @@ describe 'forms' do
         click_button 'Login'
 
         expect(find('#flash').visible?).to be true
-        #expect(find('#flash').text).to eql 'Olá, Tony Stark. Você acessou a área logada!'
-        #expect(find('#flash')).to have_content 'Olá, Tony Stark. Você acessou a área logada!'
-        expect(find('#flash').text).to include 'Olá, Tony Stark. Você acessou a área logada!'
+        #expect(find('#flash').text).to eql 'Olá, Tony Stark. Você acessou a área logada!' #tem que ser igual 
+        #expect(find('#flash')).to have_content 'Olá, Tony Stark. Você acessou a área logada!' #tem que ter no texto 
+        expect(find('#flash').text).to include 'Olá, Tony Stark. Você acessou a área logada!' #tem que ter no elemento 
 
     end
 
     it 'senha incorreta' do
 
-        visit 'https://training-wheels-protocol.herokuapp.com/login'
-
         fill_in 'username', with: 'stark'
         fill_in 'password', with: 'jarvis'
 
         click_button 'Login'
-        expect(find('#flash').text).to include 'Senha é invalida!'
+        expect(find('#flash').text).to include 'Senha é invalida!' #um ID
 
 
     end
     
     it 'usuário não cadastrado' do
-
-
-        visit 'https://training-wheels-protocol.herokuapp.com/login'
 
         fill_in 'username', with: 'sta'
         fill_in 'password', with: 'jarvis'
