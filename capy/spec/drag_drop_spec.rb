@@ -1,11 +1,12 @@
 describe 'Drag and Dropo', :drag do 
     
     before(:each) do 
-        visit'https://training-wheels-protocol.herokuapp.com/drag_and_drop'
+        visit'/drag_and_drop'
     end
 
     it 'homem aranha pertence ao time do stark' do 
 
+        #palavras compostas é necessario "" em alguns atributos
         stark = find('.team-stark .column ')
         cap = find('.team-cap .column')
 

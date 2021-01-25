@@ -2,7 +2,7 @@ describe 'caixa de opções', :este do
 
     before(:each) do 
 
-        visit 'https://training-wheels-protocol.herokuapp.com/dropdown'
+        visit '/dropdown'
 
     end
     it 'item especifico simples' do
