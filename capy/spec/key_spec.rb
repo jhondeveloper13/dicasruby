@@ -9,6 +9,9 @@ describe 'Teclado', :key do
         teclas = %i[tab escape space enter shift control alt]
 
         teclas.each do |r|
+
+            # find('#campo-id').send_keys :space
+
             find('#campo-id').send_keys r
 
             expect(page).to have_content 'You entered: ' + r.to_s.upcase 
